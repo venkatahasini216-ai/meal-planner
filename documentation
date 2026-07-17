@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FreshPlate Documentation</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+
+}
+
+
+
+body{
+
+
+background:
+
+linear-gradient(
+
+rgba(255,247,237,.92),
+
+rgba(220,252,231,.92)
+
+),
+
+url("https://images.unsplash.com/photo-1585937421612-70a008356fbe");
+
+
+background-size:cover;
+
+background-attachment:fixed;
+
+padding:40px;
+
+
+}
+
+
+
+
+.container{
+
+
+max-width:1200px;
+
+margin:auto;
+
+
+background:rgba(255,255,255,.90);
+
+backdrop-filter:blur(15px);
+
+
+padding:45px;
+
+
+border-radius:35px;
+
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.2);
+
+
+animation:show 1s;
+
+
+}
+
+
+
+
+@keyframes show{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+h1{
+
+
+text-align:center;
+
+font-size:45px;
+
+color:#166534;
+
+
+margin-bottom:40px;
+
+
+}
+
+
+
+h1 span{
+
+
+color:#f97316;
+
+
+}
+
+
+
+
+
+h2{
+
+
+margin-top:40px;
+
+
+color:#15803d;
+
+
+border-left:7px solid #f97316;
+
+
+padding-left:15px;
+
+
+font-size:28px;
+
+
+}
+
+
+
+
+
+h3{
+
+
+color:#f97316;
+
+margin-top:20px;
+
+
+}
+
+
+
+
+p{
+
+
+line-height:1.8;
+
+color:#374151;
+
+margin:15px 0;
+
+
+}
+
+
+
+
+
+ul{
+
+
+margin-left:30px;
+
+line-height:2;
+
+
+}
+
+
+
+
+li::marker{
+
+
+color:#f97316;
+
+
+}
+
+
+
+
+
+.card{
+
+
+background:#fff7ed;
+
+
+padding:25px;
+
+
+border-radius:20px;
+
+
+border-left:6px solid #15803d;
+
+
+margin-top:20px;
+
+
+transition:.4s;
+
+
+}
+
+
+
+.card:hover{
+
+
+transform:translateY(-8px);
+
+
+box-shadow:
+
+0 15px 30px rgba(21,128,61,.2);
+
+
+}
+
+
+
+
+
+
+
+
+table{
+
+
+width:100%;
+
+
+border-collapse:collapse;
+
+
+margin-top:25px;
+
+
+}
+
+
+
+
+th{
+
+
+background:#15803d;
+
+
+color:white;
+
+
+padding:15px;
+
+
+}
+
+
+
+
+td{
+
+
+background:white;
+
+
+padding:15px;
+
+
+text-align:center;
+
+
+border:1px solid #ddd;
+
+
+}
+
+
+
+
+tr:hover td{
+
+
+background:#dcfce7;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* SCREENSHOTS */
+
+
+.gallery{
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(300px,1fr));
+
+
+gap:25px;
+
+
+margin-top:25px;
+
+
+}
+
+
+
+
+.photo{
+
+
+height:250px;
+
+
+border-radius:25px;
+
+
+overflow:hidden;
+
+
+border-top:5px solid #f97316;
+
+
+box-shadow:
+
+0 15px 30px rgba(0,0,0,.15);
+
+
+transition:.4s;
+
+
+}
+
+
+
+.photo:hover{
+
+
+transform:scale(1.05);
+
+
+}
+
+
+
+
+.photo img{
+
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+
+}
+
+
+
+
+
+
+
+.links{
+
+
+background:#dcfce7;
+
+
+padding:25px;
+
+
+border-radius:20px;
+
+
+border-left:6px solid #f97316;
+
+
+}
+
+
+
+
+
+
+.btn{
+
+
+display:block;
+
+width:max-content;
+
+
+margin:40px auto;
+
+
+background:#15803d;
+
+
+color:white;
+
+
+padding:15px 35px;
+
+
+border-radius:40px;
+
+
+text-decoration:none;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.btn:hover{
+
+
+background:#f97316;
+
+
+transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+
+footer{
+
+
+text-align:center;
+
+
+margin-top:40px;
+
+
+color:#166534;
+
+
+font-weight:600;
+
+
+}
+
+
+
+
+
+@media(max-width:700px){
+
+
+body{
+
+padding:15px;
+
+}
+
+
+
+.container{
+
+padding:25px;
+
+}
+
+
+
+h1{
+
+font-size:32px;
+
+}
+
+
+
+table{
+
+font-size:12px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<div class="container">
+
+
+
+<h1>
+
+<span>FreshPlate</span>
+
+<br>
+
+Smart Indian Meal Planner
+
+<br>
+
+Project Documentation
+
+</h1>
+
+
+
+
+
+
+<h2>1. Project Overview</h2>
+
+
+<div class="card">
+
+
+<p><b>Project Title:</b> FreshPlate – Smart Indian Meal Planner</p>
+
+
+<p><b>Website Category:</b> Food & Health / Nutrition Website</p>
+
+
+<p><b>Problem Statement:</b>
+
+Many students, working professionals, and families find it difficult to maintain healthy Indian eating habits while managing calories, budget, and meal preparation. There is a need for a simple platform that combines meal planning, calorie tracking, grocery management, and Indian recipes.
+
+</p>
+
+
+<p><b>Why We Chose This Project:</b>
+
+We selected this project because healthy food planning is important in everyday life. Indian cuisine contains many nutritious dishes, but organizing meals daily can be challenging. FreshPlate helps users create healthy meal plans, calculate calories, generate recipes, and manage groceries easily.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>2. Project Description</h2>
+
+
+<p>
+
+
+FreshPlate – Smart Indian Meal Planner is a responsive web application developed using HTML5, CSS3, and JavaScript.
+
+The website helps users maintain a healthy lifestyle by providing Indian diet plans, calorie calculation, budget-friendly meals, grocery management, and recipe generation features.
+
+The main users of this website are students, fitness enthusiasts, working professionals, and families who want convenient meal planning.
+
+The website includes an Indian recipe generator with multiple recipes, calorie calculator, grocery list using Local Storage, water tracking system, animations, and responsive design.
+
+Future improvements include AI-based meal recommendations, user login, nutrition analysis, online recipe API integration, and mobile application development.
+
+</p>
+
+
+
+
+
+
+
+
+<h2>3. Technology Stack</h2>
+
+
+<ul>
+
+<li>HTML5</li>
+
+<li>CSS3</li>
+
+<li>JavaScript</li>
+
+<li>Local Storage API</li>
+
+<li>Git & GitHub</li>
+
+<li>Vercel Deployment</li>
+
+
+</ul>
+
+
+<h3>External Resources Used</h3>
+
+
+<ul>
+
+<li>Google Fonts</li>
+
+<li>Font Awesome Icons</li>
+
+<li>Unsplash Images</li>
+
+<li>Pexels Images</li>
+
+</ul>
+
+
+
+
+
+
+
+
+<h2>4. Team Information</h2>
+
+
+<table>
+
+
+<tr>
+
+<th>Name</th>
+
+<th>Roll Number</th>
+
+<th>Department</th>
+
+<th>Year</th>
+
+<th>Email</th>
+
+</tr>
+
+
+
+<tr>
+
+<td>Bhumireddy Venkata Hasini</td>
+
+<td>1SP23AI013</td>
+
+<td>AI & ML</td>
+
+<td>4th Year</td>
+
+<td>venkatahasini216@gmail.com</td>
+
+</tr>
+
+
+
+
+<tr>
+
+<td>Nayana Shree N</td>
+
+<td>1SP23AI014</td>
+
+<td>AI & ML</td>
+
+<td>4th Year</td>
+
+<td>shreenaya@gmail.com</td>
+
+</tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+<h2>5. Team Contribution</h2>
+
+
+<table>
+
+
+<tr>
+
+<th>Member</th>
+
+<th>Contribution</th>
+
+</tr>
+
+
+<tr>
+
+<td>Bhumireddy Venkata Hasini</td>
+
+<td>
+
+UI Design, Homepage Development, Documentation, CSS Styling, Indian Food Theme
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td>Nayana Shree N</td>
+
+<td>
+
+JavaScript Features, Recipe Generator, Grocery List, Testing, Responsive Design
+
+</td>
+
+
+</tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+<h2>6. Challenges Faced</h2>
+
+
+<ul>
+
+<li>Creating responsive layouts.</li>
+
+<li>Implementing JavaScript functionality.</li>
+
+<li>Adding grocery storage using Local Storage.</li>
+
+<li>Designing attractive animations.</li>
+
+<li>Deploying website successfully.</li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+<h2>7. Learning Outcomes</h2>
+
+
+<ul>
+
+<li>Responsive Web Design</li>
+
+<li>CSS Flexbox and Grid</li>
+
+<li>JavaScript DOM Manipulation</li>
+
+<li>Event Handling</li>
+
+<li>Local Storage</li>
+
+<li>UI/UX Design</li>
+
+<li>GitHub Management</li>
+
+<li>Vercel Deployment</li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+<h2>8. Future Improvements</h2>
+
+
+<ul>
+
+<li>AI Meal Recommendation System</li>
+
+<li>Weekly Meal Planner</li>
+
+<li>User Login System</li>
+
+<li>Nutrition Dashboard</li>
+
+<li>Recipe API Integration</li>
+
+<li>Mobile Application</li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+<h2>9. Feedback on Frontend Web Development Training</h2>
+
+
+<p>
+
+
+The Frontend Web Development Training helped us understand the fundamentals of HTML, CSS, and JavaScript through practical learning. The sessions improved our knowledge of responsive design, animations, DOM manipulation, and website deployment.
+
+Working on the FreshPlate project helped us apply frontend concepts to solve a real-world problem related to healthy food planning.
+
+The training improved our confidence in creating interactive websites and taught us important skills such as GitHub management and Vercel deployment.
+
+Overall, the training experience was practical, informative, and valuable for improving our frontend development skills.
+
+</p>
+
+
+
+
+
+
+
+
+
+
+<h2>11. GitHub & Deployment Links</h2>
+
+
+<div class="links">
+
+
+<p>
+
+<b>GitHub Repository:</b>
+
+<br>
+
+Add your GitHub link here
+
+</p>
+
+
+<p>
+
+<b>Vercel Live Website:</b>
+
+<br>
+
+Add your Vercel link here
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2>12. Declaration</h2>
+
+
+<p>
+
+
+We hereby declare that this project was developed by our team for the Frontend Web Development Competition 2026. The work submitted is original and created using HTML5, CSS3, and JavaScript. External resources such as images, icons, and fonts have been properly acknowledged.
+
+</p>
+
+
+
+
+
+<a href="index.html" class="btn">
+
+⬅ Back To Website
+
+</a>
+
+
+
+<footer>
+
+🍛 FreshPlate – Smart Indian Meal Planner 🌱
+
+</footer>
+
+
+
+</div>
+
+
+</body>
+
+</html>
